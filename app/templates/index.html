@@ -1,36 +1,46 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Loja</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>ImobiBalas</title>
 </head>
 <body>
-    
-<div class="container mt-5">
-<button class="btn btn-warning mt-5" onclick="window.location.href='/admin/'">Admin</button>
-    <h1 class="text-center">Imóveis</h1>
-    <table class="table table-info">
-        <thread>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Valor</th>
-            </tr>
-        </thread>
-        <tbody>
-            {% for imovel in imoveis %}
-            <tr>
-                <td><strong>{{ imovel.id }}</strong></td>
-                <td>{{ imovel.nome }}</td>
-                <td>{{ imovel.valor }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <button onclick="window.location.href='/logout/'">Logout</button>
-</div>
+    <nav>
+        <main>
+          <header>
+            <a href="/index"><img src="{% static 'img/Imobiliaria.png' %}" width="50" height="50" alt="logo"/></a>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </header>
+          <ul class="menu" style="margin-bottom:0; margin-left:100px;">
+            <li>
+              <a href="/index"><span class="titulo">Home</span></a>
+            </li>
+            <li>
+              <a href="/imoveis"><span class="titulo">Imóveis</span></a>
+            </li>
+            <li>
+              <a href="/locatarios"><span class="titulo">Locatários</span></a>
+            </li>
+          </ul>
+          <ul class="menu" style="margin-bottom:0;">
+            <li>
+                <a href='/logout/'><span class="titulo login">Login/Logout</span></a>
+            </li>
+          </ul>
+        </main>
+    </nav>
+    {% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center">ImobiBalas</h1>
+        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur harum optio dignissimos modi ad assumenda ipsum, perspiciatis, facere, at distinctio temporibus. Tempora dolor recusandae facere? Aliquam quasi illum fugiat distinctio?</h5>        
+    </div>
+    {% endblock %}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 

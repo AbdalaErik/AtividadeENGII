@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+<button class="btn btn-warning mt-5" onclick="window.location.href='/admin/'">Admin</button>
+    <h1 class="text-center">Imóveis</h1>
+    <table class="table table-info">
+        <thread>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for imovel in imoveis %}
+            <tr>
+                <td><strong>{{ imovel.id }}</strong></td>
+                <td>{{ imovel.nome }}</td>
+                <td>{{ imovel.valor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="window.location.href='/logout/'">Logout</button>
+</div>
+
+{% endblock %}

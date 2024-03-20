@@ -23,4 +23,5 @@ urlpatterns = [
     path("", LoginView.as_view(), name="login"),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('index/', IndexView.as_view(), name='index'),
+    path('imoveis/', ImoveisView.as_view(), name='imoveis'),
 ]

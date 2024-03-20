@@ -49,3 +49,17 @@ class IndexView(View):
     def post(self, request):
 
         pass
+
+class ImoveisView(View):
+
+    def get(self, request):
+
+        imoveis = {
+            'imoveis':Imovel.objects.all()
+        }
+
+        return render(request, 'imoveis.html', imoveis)
+    
+    def post(self, request):
+
+        pass
